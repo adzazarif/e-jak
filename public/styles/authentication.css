@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+  input[type="checkbox"]:checked {
+    background-color: #5F8D4E;
+  }
+  input[type="checkbox"]{
+    border: 1px solid #5F8D4E;
+  }
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+.login .box{
+    width:350px;
+}
+.login .box .header-login{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.login .box .header-login h2{
+    font-weight: 400;
+    margin-top: 15px;
+}
+.login .box .header-login h2, 
+.login .box .header-login p{
+    color: #212A3E;
+}
+.icon-pw{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.btn-lupa-pass{
+    text-decoration: underline;
+    font-weight: 400;
+    color: #212A3E;
+}
+.form-label{
+    font-weight: 500;
+    color: #212A3E;
+}
+
+.btn-submit{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    color: #fff;
+    margin-bottom: 30px;
+    border-radius: 14px;
+    background-color: #5F8D4E;
+}
+.btn-submit:hover{
+    font-weight: bold;
+}
