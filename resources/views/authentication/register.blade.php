@@ -35,7 +35,7 @@
             </div>
 
             <div class="body-login">
-                <form action="/login" method="post">
+                <form action="/register/store" method="post">
                     @csrf
                     <div class="mb-2">
                         <label for="exampleInputEmail1" class="form-label">Nomor Identitas/KTP</label>

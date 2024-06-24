@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -44,5 +46,28 @@ class LoginController extends Controller
     $request->session()->regenerateToken();
  
     return redirect('/');
+}
+
+public function store(Request $request)
+{
+    $request->validate([
+        'email'=> ['required', 'email'],
+        'password'=> ['required'],
+        'nama'=> ['required'],
+        'alamat'=> ['required'],
+        'nik' => ['required'],
+        'no_telp' => ['required'] 
+    ]);
+
+    User::create([
+        'email'=> $request->email,
+        'password'=> Hash::make($request->password),
+        'nik'=> $request->nik,
+        'no_telp'=> $request->no_telp,
+        'nama'=> $request->nama,
+        'alamat'=> $request->alamat,
+    ]);
+
+    return redirect()->route('login')->with('success','Data berhasil ditambahkan');
 }
 }

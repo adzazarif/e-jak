@@ -22,14 +22,14 @@
         </a>
       </li>
       <li class="menu-item @active('submission.*')">
-        <a href="{{ route('submission.index') }}" class="menu-link">
+        <a href="{{ route('kendaraan.index') }}" class="menu-link">
           <i class="menu-icon tf-icons fa-solid fa-cubes"></i>
-          <div data-i18n="Analytics">Data</div>
+          <div data-i18n="Analytics">Data kendaraan</div>
         </a>
       </li>
 
       <li class="menu-item @active('submission.*')">
-        <a href="{{ route('submission.index') }}" class="menu-link">
+        <a href="{{ route('booking.index') }}" class="menu-link">
           <i class="menu-icon tf-icons fa-solid fa-cubes"></i>
           <div data-i18n="Analytics">Pendaftaran</div>
         </a>
@@ -42,18 +42,12 @@
         </a>
       </li>
 
-      <li class="menu-item @active('report.*')">
-        <a href="{{ route('report.index') }}" class="menu-link">
+      <li class="menu-item">
+        <a href="" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Analytics">Laporan</div>
         </a>
       </li>
-
-      <li class="menu-item @active('mahasiswa.index')">
-        <a href="{{ route('mahasiswa.index') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">Dashboard Mahasiswa</div>
-        </a>
-      </li>
+      
     </ul>
   </aside>
