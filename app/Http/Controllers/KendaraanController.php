@@ -66,7 +66,10 @@ class KendaraanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('admin.layouts.edit-kendaraan',[
+            'title'=> 'Edit kendaraan',
+            'kendaraan'=> Kendaraan::find($id)
+        ]);
     }
 
     /**
@@ -74,7 +77,21 @@ class KendaraanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            "no_uji"=> "required",
+            "no_kendaraan"=> "required",
+            "pemilik"=> "required",
+            "jenis_kendaraan"=> "required",
+            "no_chasis"=> "required",
+            "no_mesin"=> "required",
+            "masa_berlaku"=> "required",
+            "no_buku"=> "required",
+            "jbb"=> "required"
+        ]);
+
+        $request->merge(['status_uji'=> "Belum Uji"]);
+        Kendaraan::find($id)->update($request->all());
+        return redirect()->route("kendaraan.index")->with("success","Data berhasil di update");
     }
 
     /**
@@ -82,6 +99,8 @@ class KendaraanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $request = Kendaraan::find($id);
+        $request->delete();
+        return redirect()->route("kendaraan.index")->with("success","Data berhasil ditambahkan");
     }
 }
